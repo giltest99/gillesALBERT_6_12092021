@@ -1,7 +1,9 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 
+const userRoutes = require('./routes/user');
 
 const app = express();
 
@@ -19,3 +21,13 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
 });
+
+app.use(bodyParser.json());
+
+// Route to login & signup
+app.use('/api/auth', userRoutes);
+
+// Static files
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+module.exports = app;
