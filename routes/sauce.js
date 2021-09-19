@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+// Import middlewares
 const auth = require('../middleware/auth');
 const multer = require('../middleware/multer-config');
 
+// Import controller
 const sauceCtrl = require('../controllers/sauce');
 
 // Get all sauces
@@ -21,9 +23,8 @@ router.put('/:id', auth, multer, sauceCtrl.modifySauce);
 // Delete sauce
 router.delete('/:id', auth, sauceCtrl.deleteSauce);
 
-/* 
-
-router.post('/:id/like', auth, sauceCtrl.likeDislike); */
+// Like or dislike sauce
+router.post('/:id/like', auth, sauceCtrl.likeDislike);
 
 
 module.exports = router;
