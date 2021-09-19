@@ -1,16 +1,16 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const helmet = require("helmet");
 const mongoose = require('mongoose');
 const path = require('path');
 
-// User routes
+//Import des routes
+const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
-// Middlewares, app
 const app = express();
-app.use(helmet());
-app.use(express.json());
+app.use(cors());
 
 // Connect to mongoDb
 mongoose.connect(process.env.DB_CONNECT,
@@ -27,10 +27,18 @@ app.use((req, res, next) => {
     next();
 });
 
-// Route to login & signup
+// Middlewares, app
+app.use(helmet());
+
+app.use(express.json());
+
+// Routes
 app.use('/api/auth', userRoutes);
+app.use('/api/sauces', sauceRoutes);
 
 // Static files
 app.use('/images', express.static(path.join(__dirname, 'images')));
+        
+
 
 module.exports = app;
