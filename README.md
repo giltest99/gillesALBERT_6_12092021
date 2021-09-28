@@ -1,12 +1,8 @@
-# Projet 6 du parcours de formation Développeur Web OPENCLASSROOMS
-## Construisez une API sécurisée pour une application d'avis gastronomiques
+#  Projet 6 du parcours de formation Développeur Web OPENCLASSROOMS
+##  Construisez une API sécurisée pour une application d'avis gastronomiques
 
-------------
 
-Informations pour lancer l'application :
-
-Pour lancer l'api back-end, lancer `npm install` puis `npm start`.
-L'api fonctionnera sur l'url http://localhost:3000
-
-Dans le dossier front-end, installer angular-cli via `angular-cli`, lancer la commande `npm-install`, puis `npm start`.
-Le front sera disponible sur l'url http://localhost:8081
+Installation de l'application :
+-  Installer angular-cli `npm install angular-cli -g`
+- Dans le dossier front-end, faire `npm install` puis `npm start`. Le front de l'application se trouvera en http://localhost:8081
+- Revenir dans le dossier principal et faire `npm install`, puis `npm start`. L'api fonctionnera en http://localhost:3000
