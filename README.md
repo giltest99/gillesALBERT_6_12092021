@@ -3,6 +3,7 @@
 
 
 Installation de l'application :
--  Installer angular-cli `npm install angular-cli -g`
+- Installer angular-cli `npm install angular-cli -g`
+- Cloner le repository
 - Dans le dossier front-end, faire `npm install` puis `npm start`. Le front de l'application se trouvera en http://localhost:8081
 - Revenir dans le dossier principal et faire `npm install`, puis `npm start`. L'api fonctionnera en http://localhost:3000
